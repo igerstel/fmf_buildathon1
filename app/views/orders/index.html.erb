@@ -2,10 +2,11 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Produce</th>
     <th>Category</th>
     <th>Qty</th>
-    <th>Qtytype</th>
+    <th>Farmer</th>
+    <th>Chef</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,10 +17,9 @@
     <td><%= order.name %></td>
     <td><%= order.category %></td>
     <td><%= order.qty %></td>
-    <td><%= order.qtytype %></td>
-    <td><%= link_to 'Show', order %></td>
+    <td><%= order.farmer.name %></td>
+    <td><%= order.chef.name %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

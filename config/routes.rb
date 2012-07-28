@@ -1,14 +1,19 @@
 Fmf1::Application.routes.draw do
 
+root :to => 'Farmers#index'
+
+#get "/orders/search" => "Orders#search"
+#map.search 'search', :controller => 'search', :action => 'search'
+
   resources :orders
 
   resources :chefs
 
-root :to => 'Farmers#index'
-
   resources :produces
 
   resources :farmers
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
