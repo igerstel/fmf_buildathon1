@@ -21,6 +21,9 @@
     <td><%= link_to 'Show', produce %></td>
     <td><%= link_to 'Edit', edit_produce_path(produce) %></td>
     <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if @chef_id.nil? == false %>
+      <td><%= link_to "Order for #{@chef.name}", "order/new?chef=#{chef.id}&produce=#{produce.id}" %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

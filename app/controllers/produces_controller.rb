@@ -3,7 +3,7 @@ class ProducesController < ApplicationController
   # GET /produces.json
   def index
     @produces = Produce.all
-        @chef = Chef.find_by_id(params[:chef])
+    @chef = Chef.find_by_id(params[:chef])
 
     respond_to do |format|
       format.html # index.html.erb

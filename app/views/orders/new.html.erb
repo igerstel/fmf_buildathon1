@@ -1,5 +1,36 @@
 <h1>New order</h1>
 
+<% @order.produce.each do |produce| %>
+  <tr>
+    <td><%= produce.name %></td>
+    <td>
+    <% if produce.farm.present? %>
+      <%= produce.farm.name %>
+    <% else %>
+      No farm assigned.
+    <% end %>
+    </td>
+    <td>
+    <% if produce.category.present? %>
+      <%= produce.category.name %>
+    <% else %>
+      No category assigned.
+    <% end %>
+    </td>
+
+    <td>
+    <% if produce.category.present? %>
+      <%= produce.category.name %>
+    <% else %>
+      No category assigned.
+    <% end %>
+    </td>
+
+  </tr>
+<% end %>
+</table>
+
+
 <%= render 'form' %>
 
 <%= link_to 'Back', orders_path %>

@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
-    @chef = Chef.find_by_id(params[:chef])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +25,8 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @chef = Chef.find_by_id(params[:chef])
+    @produce = Produce.find_by_id(params[:produce])
 
     respond_to do |format|
       format.html # new.html.erb
