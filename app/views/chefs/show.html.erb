@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @chef.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @chef.address %>
+</p>
+
+<p>
+  <b>Payment:</b>
+  <%= @chef.payment %>
+</p>
+
+
+<%= link_to 'Edit', edit_chef_path(@chef) %> |
+<%= link_to 'Back', chefs_path %> |
+<%= link_to 'Order Produce', new_order_path %>

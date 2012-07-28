@@ -1,6 +1,6 @@
 class ChangeProduceCostType < ActiveRecord::Migration
   def up
-  	 	change_column :produces, :cost, :decimal, :precision => 7, :scale => 2
+  	 	change_column :produces, :cost, :float, :scale => 3
   end
 
   def down

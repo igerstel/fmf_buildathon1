@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728021942) do
+ActiveRecord::Schema.define(:version => 20120728052803) do
+
+  create_table "chefs", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.decimal  "payment",    :default => 0.0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
   create_table "farmers", :force => true do |t|
     t.string   "name"
@@ -21,13 +29,16 @@ ActiveRecord::Schema.define(:version => 20120728021942) do
     t.datetime "updated_at",                                                  :null => false
   end
 
-  create_table "produces", :force => true do |t|
-    t.string   "category"
-    t.decimal  "cost",       :precision => 7, :scale => 2
+  create_table "orders", :force => true do |t|
     t.string   "name"
+    t.string   "category"
     t.integer  "qty"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.string   "qtytype"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+# Could not dump table "produces" because of following StandardError
+#   Unknown type 'array' for column 'qtytype'
 
 end

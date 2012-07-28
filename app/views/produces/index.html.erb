@@ -14,9 +14,10 @@
 <% @produces.each do |produce| %>
   <tr>
     <td><%= produce.category %></td>
-    <td><%= produce.cost %></td>
+    <td>$ <%= produce.cost %> / <%= produce.qtytype %></td>
     <td><%= produce.name %></td>
     <td><%= produce.qty %></td>
+    <td><%= produce.qtytype %></td>
     <td><%= link_to 'Show', produce %></td>
     <td><%= link_to 'Edit', edit_produce_path(produce) %></td>
     <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +27,6 @@
 
 <br />
 
-<%= link_to 'New Produce', new_produce_path %>
+<%= link_to 'New Produce', new_produce_path %> |
+<%= link_to 'Show Farmers', farmers_path %> |
+<%= link_to 'Show Chefs', chefs_path %>

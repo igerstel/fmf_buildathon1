@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :farmer_id %><br />
+    <%= f.collection_select :farmer_id, Farmer.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :category %><br />
     <%= f.text_field :category %>
   </div>
@@ -26,6 +31,13 @@
   <div class="field">
     <%= f.label :qty %><br />
     <%= f.number_field :qty %>
+
+    <select name="produce[qtytype]">
+      <option value="ea">ea</option>
+      <option value="lb">lb</option>
+      <option value="bushel">bushel</option>
+    </select>
+
   </div>
   <div class="actions">
     <%= f.submit %>

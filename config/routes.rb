@@ -1,5 +1,9 @@
 Fmf1::Application.routes.draw do
 
+  resources :orders
+
+  resources :chefs
+
 root :to => 'Farmers#index'
 
   resources :produces
